@@ -12,7 +12,7 @@
   <div class="container">
     <div class="brand">
       <a href="<?php echo esc_url(home_url('/')); ?>">
-        <?php bloginfo('name'); ?>
+        <?php echo esc_html(get_bloginfo('name')); ?>
       </a>
     </div>
 

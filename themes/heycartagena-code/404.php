@@ -1,12 +1,8 @@
 <?php get_header(); ?>
 
 <section class="content container">
-  <?php
-  while (have_posts()) :
-    the_post();
-    the_content();
-  endwhile;
-  ?>
+  <p>Page not found.</p>
 </section>
 
 <?php get_footer(); ?>
+
