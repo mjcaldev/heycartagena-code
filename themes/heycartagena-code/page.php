@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="page-content container">
+<section class="content container">
   <?php
   while (have_posts()) :
     the_post();

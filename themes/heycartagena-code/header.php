@@ -18,13 +18,15 @@
 
     <nav class="primary-nav">
       <?php
-        wp_nav_menu([
-          'theme_location' => 'primary',
-          'container' => false,
-        ]);
+      wp_nav_menu([
+        'theme_location' => 'primary',
+        'container' => false,
+        'depth' => 2,
+        'fallback_cb' => false,
+      ]);
       ?>
     </nav>
   </div>
 </header>
 
-<main class="site-main">
+<main id="main">

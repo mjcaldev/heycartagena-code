@@ -1,35 +1,197 @@
-* {
-  box-sizing: border-box;
-}
+/* =========================
+   Design System — Hey Cartagena
+   ========================= */
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #111;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.site-header,
-.site-footer {
-  background: #0b1c2d;
-  color: #fff;
-}
-
-.site-header a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.primary-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 1rem;
-}
+   :root {
+    /* Colors */
+    --color-bg: #ffffff;
+    --color-text: #0f172a;
+    --color-muted: #f5f7fa;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-brand: #0b1c2d;
+    --color-brand-accent: #1b4f72;
+  
+    /* Typography */
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif;
+  
+    /* Layout */
+    --container-max: 1180px;
+    --container-pad: 24px;
+  
+    /* Spacing scale */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 32px;
+    --space-lg: 64px;
+    --space-xl: 96px;
+  
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+  
+    /* Type scale */
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+  }
+  
+  /* =========================
+     Base / Reset
+     ========================= */
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  /* =========================
+     Layout primitives
+     ========================= */
+  
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
+  }
+  
+  /* Sections */
+  .section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+  
+  .section-muted {
+    background: var(--color-muted);
+  }
+  
+  /* =========================
+     Typography
+     ========================= */
+  
+  h1,
+  h2,
+  h3 {
+    line-height: 1.15;
+    margin: 0 0 var(--space-sm);
+  }
+  
+  h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.05;
+  }
+  
+  h2 {
+    font-size: clamp(26px, 4vw, 38px);
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  p {
+    margin: 0 0 var(--space-sm);
+    max-width: 65ch;
+  }
+  
+  ul,
+  ol {
+    margin: 0 0 var(--space-sm);
+  }
+  
+  /* =========================
+     Header / Nav (basic)
+     ========================= */
+  
+  .site-header,
+  .site-footer {
+    background: var(--color-brand);
+    color: #fff;
+  }
+  
+  .site-header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .primary-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--space-sm);
+  }
+  
+  /* =========================
+     Buttons
+     ========================= */
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    background: #fff;
+    color: var(--color-brand);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+  
+  /* =========================
+     Homepage
+     ========================= */
+  
+  .hero {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    background: var(--color-brand);
+    color: #fff;
+  }
+  
+  .hero p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .hero-actions {
+    margin-top: var(--space-md);
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+  
+  /* Simple list styling */
+  .features {
+    padding-left: 18px;
+  }  
