@@ -38,3 +38,8 @@ add_action('wp_enqueue_scripts', function () {
     file_exists($css_path) ? filemtime($css_path) : null
   );
 });
+
+/**
+ * Include Tripadvisor integration
+ */
+require_once get_stylesheet_directory() . '/inc/tripadvisor.php';

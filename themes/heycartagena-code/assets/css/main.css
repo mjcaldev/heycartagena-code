@@ -109,6 +109,52 @@ ol {
   margin: 0 0 var(--space-sm);
 }
 
+/* Content defaults */
+
+.content,
+.entry-content {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.content a,
+.entry-content a {
+  color: var(--color-brand-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.content a:hover,
+.entry-content a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.content img,
+.entry-content img {
+  border-radius: var(--radius-md);
+}
+
+.content figure,
+.entry-content figure {
+  margin: var(--space-md) 0;
+}
+
+.content figcaption,
+.entry-content figcaption {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+.content blockquote,
+.entry-content blockquote {
+  margin: var(--space-md) 0;
+  padding: 0 0 0 var(--space-sm);
+  border-left: 4px solid var(--color-border);
+  opacity: 0.95;
+}
+
+
 /* Header */
 
 .site-header {
@@ -253,6 +299,67 @@ ol {
 
 .features {
   padding-left: 18px;
+}
+
+/* Experiences Grid */
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .experiences-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.experience-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-image {
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.experience-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.experience-content {
+  flex: 1;
+}
+
+.experience-title {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--text-lg);
+}
+
+.experience-title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.experience-title a:hover {
+  color: var(--color-brand-accent);
+  text-decoration: underline;
+}
+
+.experience-rating {
+  font-size: var(--text-sm);
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: var(--space-xs);
 }
 
 /* Footer */
