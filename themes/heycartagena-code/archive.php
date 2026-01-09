@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Archive template (archive.php)
+ * 
+ * This template controls category, tag, and date archive pages.
+ */
+get_header();
+?>
 
 <section class="content container">
   <?php

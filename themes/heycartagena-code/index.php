@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Blog listing template (index.php)
+ * 
+ * This template controls the main blog listing page.
+ */
+get_header();
+?>
 
 <section class="content container">
   <?php

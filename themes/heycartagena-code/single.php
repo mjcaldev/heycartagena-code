@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Single post template (single.php)
+ * 
+ * This template controls individual blog post pages.
+ */
+get_header();
+?>
 
 <section class="content container">
   <?php

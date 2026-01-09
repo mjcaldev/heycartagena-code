@@ -61,45 +61,16 @@ function heycartagena_tripadvisor_get_featured_experiences(): array {
 		return [];
 	}
 
-	// TODO: Map schema here once we have a sample response
-	// For now, return raw data in a safe wrapper
-	// Expected structure (to be confirmed):
-	// - If data contains 'data' array: normalize items with title, image, rating, link
-	// - Otherwise: return raw structure for inspection
-
-	$experiences = [];
-
-	// Defensive parsing: only normalize if obvious fields exist
-	if ( isset( $data['data'] ) && is_array( $data['data'] ) ) {
-		foreach ( $data['data'] as $item ) {
-			if ( ! is_array( $item ) ) {
-				continue;
-			}
-
-			$experience = [
-				'title' => isset( $item['title'] ) ? sanitize_text_field( $item['title'] ) : '',
-				'image' => isset( $item['image'] ) ? esc_url_raw( $item['image'] ) : '',
-				'rating' => isset( $item['rating'] ) ? floatval( $item['rating'] ) : 0,
-				'link'   => isset( $item['link'] ) ? esc_url_raw( $item['link'] ) : '',
-			];
-
-			// Only add if we have at least a title
-			if ( ! empty( $experience['title'] ) ) {
-				$experiences[] = $experience;
-			}
-		}
-	} else {
-		// Schema unknown - return raw data wrapped safely
-		// This allows inspection while we determine the actual schema
-		$experiences = [
-			'_raw' => $data,
-			'_note' => 'Schema mapping needed - see inc/tripadvisor.php',
-		];
-	}
+	// Intentionally return raw decoded JSON without schema normalization.
+	// This function is schema-agnostic and makes no assumptions about the API response structure.
+	// Schema mapping will be added once a real sample response is confirmed.
+	$result = [
+		'_raw' => $data,
+	];
 
 	// Cache for 6 hours
-	set_transient( $cache_key, $experiences, 6 * HOUR_IN_SECONDS );
+	set_transient( $cache_key, $result, 6 * HOUR_IN_SECONDS );
 
-	return $experiences;
+	return $result;
 }
 
